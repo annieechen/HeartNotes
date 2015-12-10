@@ -4,21 +4,15 @@
     {
         if($note["type"] === "youtube")
         {
-            print("<iframe width='420' height='345' src='{$note["content"]}'></iframe>");
-            /*
-            // source = http://stackoverflow.com/a/7604163/5636361
-            $ytarray=explode("/", $note["content"]);
-            $ytendstring=end($ytarray);
-            $ytendarray=explode("?v=", $ytendstring);
-            $ytendstring=end($ytendarray);
-            $ytendarray=explode("&", $ytendstring);
-            $ytcode=$ytendarray[0];
-            dum("<iframe width=\"420\" height=\"315\" src=\"http://www.youtube.com/embed/$ytcode\" frameborder=\"0\" allowfullscreen></iframe>");
-            */
+            // source = http://stackoverflow.com/a/15401667/5636361
+            $string = $note["content"];
+            $search = '/youtube\.com\/watch\?v=([a-zA-Z0-9]+)/smi';
+            $replace = "youtube.com/embed/$1";    
+            $url = preg_replace($search,$replace,$string);
+            print("<iframe width='420' height='345' src='{$url}'></iframe>");
         } 
         else if(($note["type"]) === "image")
         {
-            //print("fish are friends not food");
             print("<img src='{$note["content"]}'/>");
         }
         else if(($note["type"]) === "memory")
@@ -31,7 +25,8 @@
             print("<h3>This is a note</h3><br>");
             print($note["content"]);
         }
-        print("<br>Sent by {$note["sender"]} at {$note["submitTime"]}");
+        print("<br><br>Sent by {$note["sender"]} at {$note["submitTime"]}");
+        print("<br><br><a class='headerpadding' href='https://ide50-aec78.cs50.io/newupload.php?uID={$note["senderID"]}'>Send one back!</a>");
     }
     else
     {

@@ -1,7 +1,15 @@
 <html><form action="newupload.php" method="post" onSubmit="return validateForm()">
     <fieldset> 
-        <div class="form-group">
-            <input autocomplete="off" autofocus class="form-control" name="uniqueID" placeholder="ID of receiver" type="text"/>
+        <div class="form-group"> UniqueID of Recipient <br>
+            <?php
+            if(empty($uniqueID))
+            {
+                print('<input autocomplete="off" autofocus class="form-control" name="uniqueID" placeholder="ID of receiver" type="text"/>');
+            } else
+            {
+                print("<input autocomplete='off' autofocus class='form-control' name='uniqueID' placeholder='ID of receiver' type='text' value='{$uniqueID}'/>");
+            }
+            ?>
         </div>
         <div>Type of Note <br>
             <select id = "uploadtype" name="type">
@@ -12,11 +20,12 @@
                 <option value="note">Note</option>
             </select>
         </div>
-        <br>
         <div id="type_youtube" class="type_input" class="form-group" style="display: none;">
-            <input class="form-control" class="youtube" name="youtube" placeholder="Youtube URL" type="text"/>
+              Enter youtube link formatted like <a href="https://www.youtube.com/watch?v=F7AyRDKMJ2c">https://www.youtube.com/watch?v=F7AyRDKMJ2c</a>
+            <br><input class="form-control" class="youtube" name="youtube" placeholder="Youtube URL" type="text"/>
         </div>
         <div id="type_image" class="type_input" class="form-group" style="display: none;">
+            Enter url of image. If you have an image on your computer, upload it to <a href="http://tinypic.com/">tinypic.com/</a> and paste in the link <br>
             <input class="form-control" class="image" name="image" placeholder="Image Link" type="text"/>
         </div>
         <div id="type_memory" class="type_input" class="form-group" style="display: none;">

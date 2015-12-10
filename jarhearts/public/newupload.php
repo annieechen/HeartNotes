@@ -6,8 +6,16 @@
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
-        // else render form
-        render("uploadform.php", ["title" => "Upload"]);
+        // if link has a uID already embedded
+        If(!empty($_GET["uID"]))
+        {
+            render("uploadform.php", ["title" => "Upload", "uniqueID" => $_GET["uID"]]);
+        } 
+        // no uniqueID specified
+        else
+        {
+            render("uploadform.php", ["title" => "Upload"]);
+        }    
     }
 
      // else if user reached page via POST (as by submitting a form via POST)

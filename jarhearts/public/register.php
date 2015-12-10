@@ -27,13 +27,12 @@
             apologize("Two passwords do not match!");
         }
         
-        /* uniqueID temporarily phased out
         // check to make sure random uniqueID is actually unique
         do {
             $identifier = generateRandomID();
             $checkuniqueID = CS50::query("SELECT * FROM users WHERE uniqueID = ?", $identifier);
         } while (!empty($checkuniqueID));
-        */
+        
         // check to see username was unique
         $test = CS50::query("INSERT IGNORE INTO users (username, hash, uniqueID) VALUES(?, ?, ?)", $_POST["username"], password_hash($_POST["password"], PASSWORD_DEFAULT), $identifier);
         if ($test == 0)

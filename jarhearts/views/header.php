@@ -3,7 +3,9 @@
 <html>
 
     <head>
-
+        <!-- change favicon -->
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <!-- http://getbootstrap.com/ -->
         <link href="/css/bootstrap.min.css" rel="stylesheet"/>
 
@@ -36,12 +38,12 @@
              </div>
             <div id="top">
                 <div>
-                    <a href="/"><img alt="Heartnotes Home" src="/img/logo.png"/></a>
+                    <a href="/"><img alt="Heartnotes Home" width="600px" src="/img/logo.png"/></a>
                 </div>
                 <?php if (!empty($_SESSION["id"])): ?>
                     <ul class="nav nav-pills">
-                        <li><a href="/">Home</a></li>
-                        <li>
+                        <li class="headerpadding"><a href="/">Home</a></li>
+                        <li class="headerpadding">
                         <div class="dropdown">
                             <a class="dropdown-toggle" type="button" data-toggle="dropdown">About
                             <span class="caret"></span></a>
@@ -52,10 +54,10 @@
                             </ul>
                         </div>
                         </li>
-                        <li><a href="log.php">Your Own Uploads</a></li>
-                        <li><a href="notedisplay.php">Get New Note</a></li>
-                        <li><a href="oldnoteslog.php">Past Notes</a></li>
-                        <li><a href="newupload.php">New Upload</a></li>
+                        <li class="headerpadding"><a href="log.php">Your Own Uploads</a></li>
+                        <li class="headerpadding"><a href="notedisplay.php">Today's Note</a></li>
+                        <li class="headerpadding"><a href="oldnoteslog.php">Past Notes</a></li>
+                        <li class="headerpadding"><a href="newupload.php">New Upload</a></li>
                     </ul>
                 <?php endif ?>
             </div>

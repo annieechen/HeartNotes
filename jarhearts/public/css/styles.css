@@ -68,3 +68,17 @@ tr:hover
 {
     margin-top:10px;
 }
+body
+{
+    font-family:"Century Gothic";
+}
+a
+{
+    color:#268A04;
+    font-weight:500;
+}
+.headerpadding
+{
+    padding:20px;
+    font-size:20px;
+}
