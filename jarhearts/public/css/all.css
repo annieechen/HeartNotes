@@ -1,0 +1,137 @@
+body {
+ 	margin: 0;
+ 	padding: 0;
+ 	text-decoration: none;
+}
+table {
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	text-align: center;
+}
+
+section table tr td a div {
+	width: auto;
+	text-align: center;
+}
+
+
+.curlink:link, .curlink:visited, .curlink:hover, .curlink:active {
+	color: black;
+}
+
+.story div {
+	height: 100%;
+	text-align: center;
+	font-size: 125px;
+}
+
+#top {
+	background: url("/img/logo.png");
+	background-position: 50% 20%;
+	background-size: 50%;
+	background-repeat:no-repeat;
+	text-align: center;
+	height: 340px;
+}
+
+.story {
+	height: 700px;
+	margin: -1px -1px -1px -1px;
+	padding:0px 0px 0px 0px;
+	width: 100%;
+	position: relative;
+
+}
+.content {
+	font-family: Century Gothic; 
+	font-size: 70pt;
+	color: #FFFFFF;
+}
+#first {
+	background: url("/img/scenery.jpg") 50% 0 no-repeat fixed;
+	background-size: cover;
+}
+
+#second {
+	background: url("/img/mountain.jpg") 50% 0 no-repeat fixed;
+	background-size: cover;
+}
+
+#third {
+	background: url("/img/jumping.jpg") 50% 0 no-repeat fixed;
+	background-size: cover;
+}
+.description {
+	height: 300px;
+	width: 100%;
+	position: relative;
+
+}
+
+#fourth {
+ 	background-color: #404040;	
+ 	background-size: cover;
+}
+
+#fifth {
+	background-color:#404040;
+}
+#signup {
+	height: 700px;
+	background: url("/img/jar.jpg") 50% 0 no-repeat fixed;
+	background-size: cover;
+	text-decoration: none;
+}
+
+#signup div {
+	font-size: 130%;
+	padding: 5px 30px;
+	border-radius: 40px;
+	background-color: #BCC882;
+	color: #FFFFFF;
+	width: 20%;
+	left:10%;
+	position:relative;
+	transition: all ease .2s;
+	-moz-transition: all ease .2s;
+	-webkit-transition: all ease .2s;
+	-o-transition: all ease .2s;
+	-ms-transition: all ease .2s;
+}
+
+#signup a div:hover {
+	background-color: #A2B352;
+}
+
+
+
+header {
+	text-align: center;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	font-family:"Century Gothic";
+	background-color: rgba(184, 197, 123, .9);
+	width: 100%;
+	height: 5vh;
+	z-index: 10;
+}
+
+#menubar {
+	position: absolute;
+	text-align: center;
+	font-size: 3vh;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-shadow: none;
+}
+
+#menubar a {
+	text-decoration: none;
+	color:#268A04;
+    font-weight:500;
+    padding:20px;
+    font-size:20px;
+}

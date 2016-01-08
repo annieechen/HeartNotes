@@ -1,0 +1,4 @@
+make account
+log in
+upload photos option
+

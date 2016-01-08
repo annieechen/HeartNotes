@@ -13,20 +13,25 @@
         } 
         else if(($note["type"]) === "image")
         {
-            print("<img src='{$note["content"]}'/>");
+            print("<img width='300' src='{$note["content"]}'/>");
         }
-        else if(($note["type"]) === "memory")
+        else if(($note["type"]) === "website")
         {
-            print("<h3>This is a memory</h3><br>");
-            print($note["content"]);
+            $url = $note["content"];
+            print("<h3>This is a Website</h3><br>");
+            print("<iframe src='{$url}' frameborder='0' scrolling='yes' width='100%' height='900px'></iframe>");
+            print("<h4>We know this feature is buggy! If the website isn't showing up, you can go to it directly at: <a href='{$url}'>{$url}</a><h4>");
         }
         else if(($note["type"]) === "note")
         {
-            print("<h3>This is a note</h3><br>");
+            print("<h3>This is a note!</h3><br>");
             print($note["content"]);
         }
         print("<br><br>Sent by {$note["sender"]} at {$note["submitTime"]}");
-        print("<br><br><a class='headerpadding' href='https://ide50-aec78.cs50.io/newupload.php?uID={$note["senderID"]}'>Send one back!</a>");
+        if($note["sender"]!="anonymous")
+        {
+            print("<br><br><a class='headerpadding' href='https://ide50-aec78.cs50.io/email.php?uID={$note["email"]}'>Send an email saying thanks!!</a>");
+        }    
     }
     else
     {

@@ -16,7 +16,7 @@
                 <option value="default" selected="selected">Please choose</option>
                 <option value="youtube">Youtube Link</option>
                 <option value="image">Image</option>
-                <option value="memory">Memory</option>
+                <option value="website">Website</option>
                 <option value="note">Note</option>
             </select>
         </div>
@@ -28,8 +28,8 @@
             Enter url of image. If you have an image on your computer, upload it to <a href="http://tinypic.com/">tinypic.com/</a> and paste in the link <br>
             <input class="form-control" class="image" name="image" placeholder="Image Link" type="text"/>
         </div>
-        <div id="type_memory" class="type_input" class="form-group" style="display: none;">
-            <textarea rows="10" cols="50" class="form-control" class="memory" name="memory" placeholder="Text" type="text"></textarea>
+        <div id="type_website" class="type_input" class="form-group" style="display: none;"> Please make sure your website url begins with https://, or it may not load properly when displayed!<br>
+            <input class="form-control" class="website" name="website" placeholder="link" type="text"/>
         </div>
         <div id="type_note" class="type_input" class="form-group" style="display: none;">
             <textarea rows="10" cols="50" class="form-control" class="note" name="note" placeholder="Memory" type="text"></textarea>
@@ -45,7 +45,7 @@
 </form>
 
 <div>
-   Questions? Check out our <a href="about.php">FAQ</a>
+   Questions? Check out our <a href="FAQ.php">FAQ</a>
 
 <script>
     // changes form elements showing based on dropdown

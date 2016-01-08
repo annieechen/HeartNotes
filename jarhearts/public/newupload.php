@@ -38,7 +38,7 @@
         else
         {
             $userID = $_SESSION["id"];
-            $redirecter = "/";
+            $redirecter = "log.php";
         }
         
         // for each upload type, add to the general table
@@ -49,8 +49,8 @@
             case "image":
                 $check = CS50::query("INSERT INTO notes (uniqueID, userID, type, content) VALUES(?, ?, ?, ?)", $_POST["uniqueID"], $userID, $_POST["type"], $_POST["image"]);
                 break;
-            case "memory":
-                $check = CS50::query("INSERT INTO notes (uniqueID, userID, type, content) VALUES(?, ?, ?, ?)", $_POST["uniqueID"], $userID, $_POST["type"], $_POST["memory"]);
+            case "website":
+                $check = CS50::query("INSERT INTO notes (uniqueID, userID, type, content) VALUES(?, ?, ?, ?)", $_POST["uniqueID"], $userID, $_POST["type"], $_POST["website"]);
                 break;
             case "note":
                 $check = CS50::query("INSERT INTO notes (uniqueID, userID, type, content) VALUES(?, ?, ?, ?)", $_POST["uniqueID"], $userID, $_POST["type"], $_POST["note"]);

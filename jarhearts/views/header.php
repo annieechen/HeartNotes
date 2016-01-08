@@ -38,24 +38,23 @@
              </div>
             <div id="top">
                 <div>
-                    <a href="/"><img alt="Heartnotes Home" width="600px" src="/img/logo.png"/></a>
+                    <a href="notedisplay.php"><img alt="Heartnotes Home" width="600px" src="/img/logo.png"/></a>
                 </div>
                 <?php if (!empty($_SESSION["id"])): ?>
                     <ul class="nav nav-pills">
-                        <li class="headerpadding"><a href="/">Home</a></li>
+                        <li class="headerpadding"><a href="notedisplay.php">Today's Note</a></li>
                         <li class="headerpadding">
                         <div class="dropdown">
                             <a class="dropdown-toggle" type="button" data-toggle="dropdown">About
                             <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/">How to Use</a></li>
+                                <li><a href="howto.php">Description</a></li>
                                 <li><a href="FAQ.php">FAQ</a></li>
                                 <li><a href="about.php">About Us</a></li>
                             </ul>
                         </div>
                         </li>
                         <li class="headerpadding"><a href="log.php">Your Own Uploads</a></li>
-                        <li class="headerpadding"><a href="notedisplay.php">Today's Note</a></li>
                         <li class="headerpadding"><a href="oldnoteslog.php">Past Notes</a></li>
                         <li class="headerpadding"><a href="newupload.php">New Upload</a></li>
                     </ul>

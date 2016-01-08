@@ -6,8 +6,16 @@
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
-        // else render form
-        render("register_form.php", ["title" => "Register"]);
+        
+        if (empty($_SESSION["id"]))
+        {
+            // if user is not already logged in
+            render("register_form.php", ["title" => "Register"]);
+        } else
+        {
+            // redirect to account information
+            redirect("account.php");
+        }    
     }
 
     // else if user reached page via POST (as by submitting a form via POST)
@@ -34,7 +42,7 @@
         } while (!empty($checkuniqueID));
         
         // check to see username was unique
-        $test = CS50::query("INSERT IGNORE INTO users (username, hash, uniqueID) VALUES(?, ?, ?)", $_POST["username"], password_hash($_POST["password"], PASSWORD_DEFAULT), $identifier);
+        $test = CS50::query("INSERT IGNORE INTO users (username, hash, uniqueID, email) VALUES(?, ?, ?, ?)", $_POST["username"], password_hash($_POST["password"], PASSWORD_DEFAULT), $identifier, $_POST["email"]);
         if ($test == 0)
         {
             apologize("This username is taken!");

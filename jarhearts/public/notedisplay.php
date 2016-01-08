@@ -39,10 +39,11 @@
     $noterow= CS50::query("SELECT userID, type, content, submitTime FROM notes WHERE counter = ?", $getnote[0]["noteNumber"]);
 
     // convert number to username
-    $getUsername = CS50::query("SELECT username, uniqueID FROM users WHERE id= ?", $noterow[0]["userID"]);
+    $getUsername = CS50::query("SELECT username, uniqueID, email FROM users WHERE id= ?", $noterow[0]["userID"]);
 
     // load in chosen note
     $note = [
+        "email" =>$getUsername[0]["email"],
         "sender" => $getUsername[0]["username"],
         "senderID" =>$getUsername[0]["uniqueID"],
         "type" => $noterow[0]["type"],

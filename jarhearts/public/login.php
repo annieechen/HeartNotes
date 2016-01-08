@@ -6,8 +6,15 @@
     // if user reached page via GET (as by clicking a link or via redirect)
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
-        // else render form
-        render("login_form.php", ["title" => "Log In"]);
+        if (empty($_SESSION["id"]))
+        {
+            // if user is not already logged in
+            render("login_form.php", ["title" => "Log In"]);
+        } else
+        {
+            // redirect to account information
+            redirect("account.php");
+        }
     }
 
     // else if user reached page via POST (as by submitting a form via POST)
@@ -39,7 +46,7 @@
                 $_SESSION["id"] = $row["id"];
 
                 // redirect to portfolio
-                redirect("/");
+                redirect("/account.php");
             }
         }
 

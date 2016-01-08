@@ -50,7 +50,7 @@
     }
 
     /** generates a randomID for user url
-     *  is no longer used
+     *  source: http://stackoverflow.com/a/3991906/5636361
      */
     function generateRandomID() {
         // http://mohnish.in
@@ -90,11 +90,17 @@
         {
             // extract variables into local scope
             extract($values);
-
+            // if statements remove header and footer for home page
             // render view (between header and footer)
-            require("../views/header.php");
+            if (!in_array($_SERVER["PHP_SELF"], ["/index.php"]))
+            {
+                require("../views/header.php");
+            }
             require("../views/{$view}");
-            require("../views/footer.php");
+            if (!in_array($_SERVER["PHP_SELF"], ["/index.php"]))
+            {
+                require("../views/footer.php");
+            }
             exit;
         }
 

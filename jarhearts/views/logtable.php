@@ -1,5 +1,5 @@
 <table class="table table-striped">
-
+<h1>Past Uploaded Notes</h1>
     <thead>
         <tr>
             <th>Sent To</th>

@@ -1,0 +1,2 @@
+char* tok1 = strtok(str,"abc\0def\0");
+char* tok2 = strtok(NULL,");

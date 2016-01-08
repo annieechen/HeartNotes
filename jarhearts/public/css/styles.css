@@ -50,6 +50,7 @@
     text-align: left;
     /* surround with whitespace */
     margin: 20px;
+    color: #FFFFFF;
 }
 .tableleft
 {
@@ -70,6 +71,7 @@ tr:hover
 }
 body
 {
+    background: url("/img/jar.jpg") 100% 0  no-repeat fixed;
     font-family:"Century Gothic";
 }
 a
@@ -81,4 +83,14 @@ a
 {
     padding:20px;
     font-size:20px;
+}
+
+h4 
+{
+    font-size:30px;
+}
+p
+{
+    font-size: 20px;
+    color:#FFFFFF;
 }
