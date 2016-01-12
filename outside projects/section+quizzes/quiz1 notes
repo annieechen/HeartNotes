@@ -1,9 +1,0 @@
-executables
-user group other
-
-for file
-read write execute
-1 1 0 means read and write
-
-for directory
-r = directory listing    w = rename or delete    x = access things below
